@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg"
      xmlns:xlink="http://www.w3.org/1999/xlink"
      version="1.1"
-     width="300"
+     width="<%= textStart + textWidth + 2 * margin %>"
      height="50">
 
   <defs>
@@ -18,17 +18,17 @@
         rx="3" ry="3"
         width="80" height="20"
         fill="#332532" />
-  <rect x="32"
+  <rect x="<%= textStart %>"
         rx="3" ry="3"
-        width="80" height="20"
+        width="<%= textWidth + 2 * margin %>" height="20"
         fill="#F77A52" />
 
-  <g font-size="11"
-     font-family="Open Sans,sans-serif"
+  <g font-size="<%= fontSize %>"
+     font-family="<%= fontFamily %>"
      fill="#fff">
     <text x="10" y="16"
           font-family="FontAwesome"
           font-size="14">&#xf072;</text>
-    <text x="51" y="13">Bangkok</text>
+    <text x="<%= textStart + margin %>" y="13"><%= location %></text>
   </g>
 </svg>
