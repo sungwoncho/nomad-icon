@@ -5,7 +5,8 @@ var User = require('../models/user');
 var ejs = require('ejs');
 var setParams = require('../lib/setParams');
 
-router.get('/:username/status', function (req, res, next) {
+router.get('/:username/status.svg', function (req, res, next) {
+
   User.findOne({username: req.params.username}, function (err, user) {
     if (err) throw err;
 
@@ -18,6 +19,8 @@ router.get('/:username/status', function (req, res, next) {
 
         res.end(rendered);
       });
+    } else {
+      res.end('User is not found');
     }
   });
 });
