@@ -6,7 +6,8 @@ var userSchema = new Schema({
     type: String
   },
   location: {
-    type: String
+    city: { type: String },
+    movedOn: { type: Date }
   }
 });
 

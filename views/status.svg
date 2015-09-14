@@ -21,7 +21,7 @@
   <rect x="<%= textStart %>"
         rx="3" ry="3"
         width="<%= textWidth + 2 * margin %>" height="20"
-        fill="#F77A52" />
+        fill="<%= iconColor %>" />
 
   <g font-size="<%= fontSize %>"
      font-family="<%= fontFamily %>"
