@@ -74,3 +74,16 @@
     box-shadow: 0 0 50px rgba(255,255,255,0.3);
   }
 }
+
+.features {
+  @include outer-container;
+  padding: 3em 0;
+
+  .feature {
+    @include span-columns(6);
+
+    &:nth-child(2) {
+      @include omega();
+    }
+  }
+}

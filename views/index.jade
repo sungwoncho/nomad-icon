@@ -12,6 +12,43 @@ block content
     h1.brand Nomad Icon
     p.cta Where are you in the world now?
     a.btn(href='#') Get one
+
+  .features
+    .feature
+      h2 Open source
+      p
+        | It's open source. You can view and contribute to the
+        | source code on the
+        a(href="https://github.com/sungwoncho/nmdi.co" target="_blank") GitHub repo
+        | .
+
+    .feature
+      h2 Color indicates stability
+      p
+        | The color of the icon changes to indicate how long you have stayed in
+        | the location.
+
+      div
+        img(src="/jon/status.svg", alt="jon")
+        | - Stable
+      div
+        img(src="/jane/status.svg", alt="jane")
+        | - Semi-stable
+      div
+        img(src="/liz/status.svg", alt="liz")
+        | - Unstable
+
+
+    .feature
+      h2 Markdown/HTML embed
+      p
+        | You can use either markdown or HTML to embed your icon anywhere.
+
+    .feature
+      h2 Link to your Twitter account
+      p
+        | Your icon automatically links to your Twitter account.
+
   
   script(src='/javascripts/vendor/typed.js')
   script(src='/javascripts/index.js')

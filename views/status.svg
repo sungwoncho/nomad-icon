@@ -2,7 +2,7 @@
      xmlns:xlink="http://www.w3.org/1999/xlink"
      version="1.1"
      width="<%= textStart + textWidth + 2 * margin %>"
-     height="50">
+     height="20">
 
   <defs>
     <!-- http://stackoverflow.com/questions/18225954/use-fontawesome-icon-in-svg-without-external-files -->
