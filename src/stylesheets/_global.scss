@@ -9,3 +9,12 @@ html, body {
 .content {
   @include outer-container;
 }
+
+a {
+  color: #EC5959;
+  text-decoration: none;
+
+  &:visited {
+    color: #EC5959;
+  }
+}

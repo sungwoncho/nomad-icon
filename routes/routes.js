@@ -5,7 +5,7 @@ var ensureLoggedIn = require('../lib/routeHelpers').ensureLoggedIn;
 
 module.exports = function (app, passport) {
   app.get('/', function (req, res) {
-    res.render('index');
+    res.render('index', {loggedIn: !!req.user, currentYear: moment().year()});
   });
   app.use('/', status);
   app.use('/u', user);

@@ -11,43 +11,57 @@ block content
     
     h1.brand Nomad Icon
     p.cta Where are you in the world now?
-    a.btn(href='/auth/twitter' class="signup-btn") Get one
+
+    if loggedIn
+      a.btn(href='settings') Settings
+    else
+      a.btn(href='/auth/twitter' class="signup-btn") Get one
 
   .features
     .feature
       h2 Open source
       p
-        | It's open source. You can view and contribute to the
-        | source code on the
+        | View and contribute to the source code on the 
         a(href="https://github.com/sungwoncho/nmdi.co" target="_blank") GitHub repo
         | .
 
     .feature
       h2 Color indicates stability
       p
-        | The color of the icon changes to indicate how long you have stayed in
-        | the location.
+        | The color changes to show how long you have stayed in the location.
 
-      div
-        img(src="/jon/status.svg", alt="jon")
-        | - Stable
-      div
-        img(src="/jane/status.svg", alt="jane")
-        | - Semi-stable
-      div
-        img(src="/liz/status.svg", alt="liz")
-        | - Unstable
+        .sample
+          img(src="/jon1/status.svg", alt="jon" class="sample-icon")
+          span.legend Stable (more than 2 months)
+        .sample
+          img(src="/jane1/status.svg", alt="jane" class="sample-icon")
+          span.legend Semi-stable (1~2 months)
+        .sample
+          img(src="/liz1/status.svg", alt="liz" class="sample-icon")
+          span.legend Unstable (less than 1 month)
 
 
     .feature
       h2 Markdown/HTML embed
       p
-        | You can use either markdown or HTML to embed your icon anywhere.
+        | Use either markdown or HTML to embed your icon anywhere. Or just get
+        | a plain icon.
 
     .feature
-      h2 Link to your Twitter account
+      h2 Optionally point to your Twitter account
       p
-        | Your icon automatically links to your Twitter account.
+        | Your icon links to your Twitter account if you choose to do so.
+        | You can even track clicks (upcoming feature).
+
+  footer
+    p
+      | Maintained by 
+      a(href="https://twitter.com/mikeswcho") @mikeswcho
+      | . Talk to me if you want.
+    p
+      | Nomad Icon is a free software released under the 
+      a(href="https://github.com/sungwoncho/nmdi.co/blob/master/LICENSE") LICENSE
+      | .
 
   
   script(src='/javascripts/vendor/typed.js')

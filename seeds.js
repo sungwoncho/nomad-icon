@@ -1,6 +1,7 @@
 var User = require('./models/user.js');
 
 var jon = new User({
+  iconHash: 'jon1',
   twitter: {
     id: 1,
     username: 'jon',
@@ -10,21 +11,23 @@ var jon = new User({
     movedOn: new Date(2015, 0, 10)
   }});
 var liz = new User({
+  iconHash: 'liz1',
   twitter: {
     id: 2,
     username: 'liz',
   },
   location: {
-    city: 'Melbourne',
+    city: 'Seoul',
     movedOn: new Date(2015, 7, 1)
   }});
 var jane = new User({
+  iconHash: 'jane1',
   twitter: {
     id: 3,
     username: 'jane',
   },
   location: {
-    city: 'Chiang Mai',
+    city: 'Seoul',
     movedOn: new Date(2015, 8, 1)
   }});
 

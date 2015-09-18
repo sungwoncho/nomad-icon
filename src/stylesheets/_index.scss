@@ -85,5 +85,34 @@
     &:nth-child(2) {
       @include omega();
     }
+
+    p {
+      color: #6D6D6D;
+    }
+
+    .sample {
+      margin: 0.5em 0;
+
+      .legend {
+        color: #6D6D6D;
+        font-size: 0.9em;
+        display: inline-block;
+        margin-left: 20px;
+      }
+    }
+
+    .sample-icon {
+      vertical-align: middle;
+    }
+  }
+}
+
+footer {
+  padding: 3em 0 1em;
+  color: #848484;
+  font-size: 0.9em;
+
+  p {
+    text-align: center;
   }
 }
