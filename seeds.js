@@ -1,19 +1,28 @@
 var User = require('./models/user.js');
 
 var jon = new User({
-  username: 'jon',
+  twitter: {
+    id: 1,
+    username: 'jon',
+  },
   location: {
     city: 'Seoul',
     movedOn: new Date(2015, 0, 10)
   }});
 var liz = new User({
-  username: 'liz',
+  twitter: {
+    id: 2,
+    username: 'liz',
+  },
   location: {
     city: 'Melbourne',
     movedOn: new Date(2015, 7, 1)
   }});
 var jane = new User({
-  username: 'jane',
+  twitter: {
+    id: 3,
+    username: 'jane',
+  },
   location: {
     city: 'Chiang Mai',
     movedOn: new Date(2015, 8, 1)

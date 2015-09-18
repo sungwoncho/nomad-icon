@@ -1,0 +1,15 @@
+extends layout.jade
+
+block content
+  .content
+    .dashboard
+      h2 Settings
+      
+      select.type-select
+        option(value="markdown") Markdown
+        option(value="html") HTML
+        option(value="image") Image URL
+      
+      input(type="text" class="embed-code" value="" readonly="readonly")
+
+  script(src='/javascripts/settings.js')
