@@ -5,6 +5,7 @@ var User = require('../models/user');
 var ejs = require('ejs');
 var setParams = require('../lib/setParams');
 var passport = require('passport');
+var ensureLoggedIn = require('../lib/routeHelpers').ensureLoggedIn;
 
 router.get('/:iconHash/status.svg', function (req, res, next) {
   User.findOne({iconHash: req.params.iconHash}, function (err, user) {
@@ -25,14 +26,7 @@ router.get('/:iconHash/status.svg', function (req, res, next) {
   });
 });
 
-router.get('/icon',
-  function (req, res, next) {
-    if (req.isAuthenticated()) {
-      return next();
-    } else {
-      res.redirect('/not-authenticated');
-    }
-  },
+router.get('/icon', ensureLoggedIn,
   function (req, res, next) {
     User.findOne({'twitter.username': req.user.twitter.username}, function (err, user) {
       if (err) throw err;

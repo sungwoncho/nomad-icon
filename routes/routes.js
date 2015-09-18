@@ -1,6 +1,7 @@
 var status = require('./status');
 var user = require('./user');
 var moment = require('moment');
+var ensureLoggedIn = require('../lib/routeHelpers').ensureLoggedIn;
 
 module.exports = function (app, passport) {
   app.get('/', function (req, res) {
@@ -8,7 +9,7 @@ module.exports = function (app, passport) {
   });
   app.use('/', status);
   app.use('/u', user);
-  app.get('/settings', function (req, res) {
+  app.get('/settings', ensureLoggedIn, function (req, res) {
     res.render('settings', {
       iconHash: req.user.iconHash,
       currentCity: req.user.location.city,

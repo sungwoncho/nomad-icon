@@ -32,8 +32,24 @@ $(document).ready(function () {
         var currentSrc = preview.attr('src');
 
         // Refresh the preview
-        preview.attr('src', currentSrc + '?timestamp' + new Date().getTime());
+        preview.attr('src', currentSrc + '?timestamp=' + new Date().getTime());
       }
     });
+  });
+
+  $(document).on('click', '.reset-hash', function (e) {
+    e.preventDefault();
+
+    if (confirm('Are you sure? All the icons you are already using will stop working.')) {
+      var target = $(this).data('target');
+
+      $.ajax({
+        url: target,
+        type: 'PUT',
+        success: function (result) {
+          location.reload();
+        }
+      });
+    }
   });
 });
