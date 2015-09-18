@@ -5,11 +5,18 @@ block content
     .dashboard
       h2 Settings
       
+      img(src="/#{iconHash}/status.svg", alt="Nomad Icon" class="icon-preview")
+
       select.type-select
         option(value="markdown") Markdown
         option(value="html") HTML
         option(value="image") Image URL
-      
+
       input(type="text" class="embed-code" value="" readonly="readonly")
+
+      form(action="/u/#{iconHash}/update" class="location-form")
+        input(type="text" name="city" value="#{currentCity}")
+        input(type="date" name="movedOn" value="#{movedOn}")
+        button(type="submit") Update
 
   script(src='/javascripts/settings.js')
