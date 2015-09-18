@@ -1,8 +1,8 @@
 var express = require('express');
 var router = express.Router();
 
-router.get('/:username', function (req, res, next) {
-  User.findOne({username: req.params.username}, function (err, user) {
+router.get('/:iconHash', function (req, res, next) {
+  User.findOne({iconHash: req.params.iconHash}, function (err, user) {
     if (err) throw err;
 
     if (user) {
