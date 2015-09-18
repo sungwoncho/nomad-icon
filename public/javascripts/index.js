@@ -14,7 +14,7 @@ $(document).ready(function () {
   });
 
   setInterval(function () {
-    var colors = ['#F77A52', '#77C4D3', '#EA2E49'];
+    var colors = ['#F77A52', '#4DC1D8', '#EA2E49'];
 
     /**
      * Randomize array element order in-place.
