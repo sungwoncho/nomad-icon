@@ -9,6 +9,12 @@
 .dashboard {
   @include span-columns(6 of 12);
   @include shift(3);
+
+  @include media($small-screen) {
+    @include span-columns(10 of 12);
+    @include shift(1);
+  }
+
   margin-top: 5em;
   margin-bottom: 5em;
   padding: 3em 0;

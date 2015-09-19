@@ -65,6 +65,12 @@
   .feature {
     @include span-columns(6);
 
+    @include media($small-screen) {
+      @include span-columns(8 of 12);
+      @include shift(2);
+      margin-bottom: 1em;
+    }
+
     &:nth-child(2) {
       @include omega();
     }
