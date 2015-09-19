@@ -10,7 +10,7 @@ module.exports = function () {
       };
     case 'production':
       return {
-        mongo_url: ''
+        mongo_url: 'mongodb://127.0.0.1/nomad-icon'
       };
     default:
       return;
