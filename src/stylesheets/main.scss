@@ -1,7 +1,13 @@
+// Frameworks
 @import "bourbon";
 @import "neat";
 
+// Global
 @import "global";
 
+// Mixins
+@import 'mixins/buttons.scss';
+
+// Page-specific
 @import "index";
 @import "settings";

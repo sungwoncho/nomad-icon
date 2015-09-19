@@ -1,0 +1,25 @@
+@mixin button($background-color: #fff, $color: #000, $size: 'regular') {
+  @include transition(all 0.2s ease-in-out);
+  border: 1px solid #fff;
+  border-radius: 2px;
+  display: inline-block;
+  text-decoration: none;
+  background-color: $background-color;
+  color: $color;
+  text-transform: uppercase;
+
+  &:hover {
+    box-shadow: 0 0 50px rgba($background-color ,0.3);
+  }
+
+  @if $size == 'regular' {
+    padding: 15px 20px 16px;
+    font-size: 1.2em;
+  } @else if $size == 'small' {
+    padding: 5px 10px;
+  }
+}
+
+.btn {
+  @include button;
+}

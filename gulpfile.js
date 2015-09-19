@@ -3,7 +3,7 @@ var gulp = require('gulp')
   , neat = require('node-neat');
 
 gulp.task('sass', function () {
-  gulp.src('src/stylesheets/main.scss')
+  gulp.src('src/stylesheets/*.scss')
       .pipe(sass({
         outputStyle: 'compressed',
         includePaths: ['src/stylesheets/'].concat(neat.includePaths)

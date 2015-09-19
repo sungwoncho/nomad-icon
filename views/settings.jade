@@ -1,24 +1,47 @@
 extends layout.jade
 
 block content
-  .content
-    .dashboard
-      h2 Settings
-      
-      img(src="/#{iconHash}/status.svg", alt="Nomad Icon" class="icon-preview")
+  .hero
+    .content
+      .dashboard
+        h1 Settings
+        
+        ul
+          li
+            h2 Preview
+            img(src="/#{iconHash}/status.svg", alt="Nomad Icon" class="icon-preview")
 
-      select.type-select
-        option(value="markdown") Markdown
-        option(value="html") HTML
-        option(value="image") Image URL
+          li
+            h2 Embed
+            select.type-select
+              option(value="markdown") Markdown
+              option(value="html") HTML
+              option(value="image") Image URL
+            br
+            textarea(class="embed-code" value="" rows="5" cols="50" readonly="readonly")
+            
+            p
+              | Copy and paste it wherever you want.
 
-      input(type="text" class="embed-code" value="" readonly="readonly")
 
-      form(action="/u/#{iconHash}/update" class="location-form")
-        input(type="text" name="city" value="#{currentCity}")
-        input(type="date" name="movedOn" value="#{movedOn}")
-        button(type="submit") Update
+          li
+            h2 Update your icon
+            
+            form(action="/u/#{iconHash}/update" class="location-form")
+              div
+                label(for="city") Location
+                input(type="text" name="city" value="#{currentCity}")
+                label(for="movedOn") Arrived On
+                input(type="date" name="movedOn" value="#{movedOn}")
+              button(type="submit" class="update-btn") Update
 
-      a(href="#" class="reset-hash" data-target="/u/#{iconHash}/reset") Reset hash
+          li
+            h2
+              | Your hash is 
+              span #{iconHash}
+
+            a(href="#" class="reset-hash" data-target="/u/#{iconHash}/reset") Reset hash
+            p
+              | Hash is a unique identifier used in your icons.
 
   script(src='/javascripts/settings.js')

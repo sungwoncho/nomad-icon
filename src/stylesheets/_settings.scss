@@ -1,5 +1,41 @@
+.hero {
+  background-color: #EC5959;
+  color: #fff;
+  text-align: center;
+  min-height: 450px;
+  overflow: auto;
+}
+
 .dashboard {
   @include span-columns(6 of 12);
   @include shift(3);
-  padding-top: 5em;
+  margin-top: 5em;
+  margin-bottom: 5em;
+  padding: 3em 0;
+  background: #fff;
+  color: #000;
+
+  li {
+    margin-top: 2em;
+    text-align: center;
+  }
+
+  .type-select {
+    margin-bottom: 1em;
+  }
+
+  label {
+    display: block;
+  }
+
+  .update-btn {
+    @include button($background-color: #44CD90, $color: #fff, $size: 'small');
+    margin-top: 1em;
+    cursor: pointer;
+  }
+
+  .reset-hash {
+    @include button($background-color: #BF3434, $color: #fff, $size: 'small');
+    margin-top: 1em;
+  }
 }
