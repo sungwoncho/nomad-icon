@@ -19,6 +19,9 @@ module.exports = function (passport) {
               username: profile.username,
               tokenSecret: tokenSecret
             },
+            location: {
+              city: 'Earth'
+            }
           };
           User.create(newUser, function (err, user) {
             return done(err, user);
