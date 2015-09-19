@@ -25,9 +25,9 @@ app.use(logger('dev'));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(cookieParser('icaruslives'));
+app.use(cookieParser(process.env.NMDICO_COOKIE_SECRET));
 app.use(session({
-  secret: 'icaruslives',
+  secret: process.env.NMDICO_COOKIE_SECRET,
   resave: false,
   saveUninitialized: true
 }));
