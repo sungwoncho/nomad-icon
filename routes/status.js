@@ -34,7 +34,7 @@ router.get('/icon', ensureLoggedIn,
       if (user) {
         var type = req.query.type;
         var twitterUrl = 'https://twitter.com/' + user.twitter.username;
-        var imageUrl = req.headers.host + '/' + user.iconHash + '/status.svg';
+        var imageUrl = process.env.NMDICO_URL + '/' + user.iconHash + '/status.svg';
         var payload;
 
         if (type === 'html') {

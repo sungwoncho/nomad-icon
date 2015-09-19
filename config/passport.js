@@ -5,7 +5,7 @@ module.exports = function (passport) {
   passport.use(new TwitterStrategy({
       consumerKey: process.env.NMDICO_CONSUMER_KEY,
       consumerSecret: process.env.NMDICO_CONSUMER_SECRET,
-      callbackURL: 'http://127.0.0.1:3000/auth/twitter/callback'
+      callbackURL: process.env.NMDICO_URL + '/auth/twitter/callback'
     },
     function (token, tokenSecret, profile, done) {
       User.findOne({'twitter.id': profile.id}, function (err, user) {
