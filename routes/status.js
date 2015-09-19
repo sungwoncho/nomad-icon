@@ -38,7 +38,7 @@ router.get('/icon', ensureLoggedIn,
         var payload;
 
         if (type === 'html') {
-          payload = "<a href=\"" + twitterUrl + "\">" + imageUrl + "</a>";
+          payload = "<a href=\"" + twitterUrl + "\"> <img src=\"" + imageUrl + "\"></img></a>";
         } else if (type === 'markdown') {
           payload = "[![Nomad Icon](" + imageUrl + ")](" + twitterUrl + ")";
         } else if (type === 'image') {
